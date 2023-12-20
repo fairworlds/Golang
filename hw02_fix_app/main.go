@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	var path = "/home/fair/github/data.json"
+	var path = "/home/fair/Golang/hw02_fix_app/data.json"
 
 	fmt.Printf("Enter data file path: ")
 	fmt.Scanln(&path)
@@ -17,7 +17,7 @@ func main() {
 	///var staff []types.Employee
 
 	if len(path) == 0 {
-		path = "/home/fair/github/data.json"
+		path = "/home/fair/Golang/hw02_fix_app/data.json"
 	}
 
 	var staff, err = reader.ReadJSON(path)
