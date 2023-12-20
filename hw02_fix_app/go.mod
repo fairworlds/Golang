@@ -1,3 +1,3 @@
-module github.com/fixme_my_friend/hw02_fix_app
+module github.com/fairworlds/Golang/hw02_fix_app
 
-go 1.20
+go 1.21.5
