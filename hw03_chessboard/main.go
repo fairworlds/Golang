@@ -17,7 +17,8 @@ func main() {
 
 	sizechess, err := strconv.Atoi(sizereader) // преобразуем данные в целое число при этом
 	// atoi - это функция в пакете strconv, которая преобразует строку в целое число (integer).
-	// В данном случае strconv.Atoi(sizereader) преобразует значение переменной sizereader из строки в целое число (integer).
+	// В данном случае strconv.Atoi(sizereader) преобразует значение переменной &
+	// && sizereader из строки в целое число (integer).
 	// Если преобразование не удалось, функция возвращает ошибку
 	if err != nil {
 		fmt.Println("Ошибка при чтении размера доски:", err)
