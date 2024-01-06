@@ -13,7 +13,7 @@ func main() {
 	fmt.Print("Введите размер доски: ")
 	sizereader, _ := reader.ReadString('\n')
 	sizereader = sizereader[:len(sizereader)-1] // удаляем символ новой строки Len возвращает длину
-	//строки или кода len(sizereader) возвращает длину переменной sizereader
+	// строки или кода len(sizereader) возвращает длину переменной sizereader
 
 	sizechess, err := strconv.Atoi(sizereader) // преобразуем данные в целое число при этом
 	// atoi - это функция в пакете strconv, которая преобразует строку в целое число (integer).
