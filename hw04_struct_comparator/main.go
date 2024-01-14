@@ -23,11 +23,11 @@ type Book struct { // определяем структуру
 
 // Методы для установки и получения полей структуры
 
-func (b *Book) SetId(id int) {
+func (b *Book) SetID(id int) {
 	b.id = id
 }
 
-func (b *Book) Id() int {
+func (b *Book) ID() int {
 	return b.id
 }
 
