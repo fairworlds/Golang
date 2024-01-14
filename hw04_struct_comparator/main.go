@@ -13,62 +13,62 @@ const ( // задаем константу для режима сравнени�
 )
 
 type Book struct { // определяем структуру
-	ID     int
-	Title  string
-	Author string
-	Year   int
-	Size   int
-	Rate   float64
+	id     int
+	title  string
+	author string
+	year   int
+	size   int
+	rate   float64
 }
 
 // Методы для установки и получения полей структуры
 
-func (b *Book) SetID(id int) {
-	b.ID = id
+func (b *Book) SetId(id int) {
+	b.id = id
 }
 
-func (b *Book) GetID() int {
-	return b.ID
+func (b *Book) Id() int {
+	return b.id
 }
 
 func (b *Book) SetTitle(title string) {
-	b.Title = title
+	b.title = title
 }
 
-func (b *Book) GetTitle() string {
-	return b.Title
+func (b *Book) Title() string {
+	return b.title
 }
 
 func (b *Book) SetAuthor(author string) {
-	b.Author = author
+	b.author = author
 }
 
-func (b *Book) GetAuthor() string {
-	return b.Author
+func (b *Book) Author() string {
+	return b.author
 }
 
 func (b *Book) SetYear(year int) {
-	b.Year = year
+	b.year = year
 }
 
-func (b *Book) GetYear() int {
-	return b.Year
+func (b *Book) Year() int {
+	return b.year
 }
 
 func (b *Book) SetSize(size int) {
-	b.Size = size
+	b.size = size
 }
 
-func (b *Book) GetSize() int {
-	return b.Size
+func (b *Book) Size() int {
+	return b.size
 }
 
 func (b *Book) SetRate(rate float64) {
-	b.Rate = rate
+	b.rate = rate
 }
 
-func (b *Book) GetRate() float64 {
-	return b.Rate
+func (b *Book) Rate() float64 {
+	return b.rate
 }
 
 // Структура с методом для сравнения книг
@@ -86,11 +86,11 @@ func NewBookComparator(mode CompareMode) *BookComparator {
 func (bc *BookComparator) Compare(book1, book2 Book) bool {
 	switch bc.mode {
 	case Year:
-		return book1.Year > book2.Year
+		return book1.year > book2.year
 	case Size:
-		return book1.Size > book2.Size
+		return book1.size > book2.size
 	case Rate:
-		return book1.Rate > book2.Rate
+		return book1.rate > book2.rate
 	default:
 		return false
 	}
@@ -98,21 +98,21 @@ func (bc *BookComparator) Compare(book1, book2 Book) bool {
 
 func main() {
 	book1 := Book{
-		ID:     1,
-		Title:  "Book 1",
-		Author: "Author 1",
-		Year:   2022,
-		Size:   200,
-		Rate:   4.5,
+		id:     1,
+		title:  "Book 1",
+		author: "Author 1",
+		year:   2022,
+		size:   200,
+		rate:   4.5,
 	}
 
 	book2 := Book{
-		ID:     2,
-		Title:  "Book 2",
-		Author: "Author 2",
-		Year:   2020,
-		Size:   150,
-		Rate:   4.2,
+		id:     2,
+		title:  "Book 2",
+		author: "Author 2",
+		year:   2020,
+		size:   150,
+		rate:   4.2,
 	}
 
 	comparator := NewBookComparator(Year)
