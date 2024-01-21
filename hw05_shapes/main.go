@@ -59,19 +59,19 @@ func calculateArea(s Shape) (float64, error) {
 }
 
 func main() {
-	// Создаем объекты разных типов
+	//Создаем объекты разных типов
 	//(круг, прямоугольник, треугольник)
 	circle := Circle{Radius: 5}
 	rectangle := Rectangle{Width: 10, Height: 5}
 	triangle := Triangle{Base: 8, Height: 6}
 
-	// Вызываем функцию calculateArea для каждого
+	//Вызываем функцию calculateArea для каждого
 	//объекта и обрабатываем возможные ошибки
 	area1, err1 := calculateArea(circle)
 	area2, err2 := calculateArea(rectangle)
 	area3, err3 := calculateArea(triangle)
 
-	// Выводим результаты на экран
+	//Выводим результаты на экран
 	if err1 == nil {
 		fmt.Printf("Круг: радиус %.2f\n", circle.Radius)
 		fmt.Printf("Площадь: %.2f\n", area1)
