@@ -6,46 +6,46 @@ import (
 	"math"
 )
 
-type Shape interface { //Создаем интерфейс Shape с единственным.
-	//методом для вычисления площади.
+type Shape interface { // Создаем интерфейс Shape с единственным.
+	// методом для вычисления площади.
 	Area() float64
 }
 
-type Circle struct { //Структура для представления круга.
+type Circle struct { // Структура для представления круга.
 	Radius float64
 }
 
-func (c Circle) Area() float64 { //Метод для вычисления площади круга.
-	//(реализация интерфейса Shape).
+func (c Circle) Area() float64 { // Метод для вычисления площади круга.
+	// (реализация интерфейса Shape).
 	return math.Pi * c.Radius * c.Radius
 }
 
-type Rectangle struct { //Структура для представления прямоугольника
+type Rectangle struct { // Структура для представления прямоугольника
 	Width  float64
 	Height float64
 }
 
-func (r Rectangle) Area() float64 { //Метод для вычисления площади
-	//прямоугольника (реализация интерфейса Shape)
+func (r Rectangle) Area() float64 { // Метод для вычисления площади
+	// прямоугольника (реализация интерфейса Shape)
 	return r.Width * r.Height
 }
 
-type Triangle struct { //Структура для представления треугольника
+type Triangle struct { // Структура для представления треугольника
 	Base   float64
 	Height float64
 }
 
 func (t Triangle) Area() float64 {
-	//Метод для вычисления площади треугольника
-	//(реализация интерфейса Shape)
+	// Метод для вычисления площади треугольника
+	// (реализация интерфейса Shape)
 	return 0.5 * t.Base * t.Height
 }
 
 func calculateArea(s Shape) (float64, error) {
-	//Функция calculateArea ожидает на входе объект
-	//типа Shape и возвращает его площадь.
-	//Если переданный объект не реализует интерфейс
-	//Shape, функция возвращает ошибку
+	// Функция calculateArea ожидает на входе объект
+	// типа Shape и возвращает его площадь.
+	// Если переданный объект не реализует интерфейс
+	// Shape, функция возвращает ошибку
 	if area := s.Area(); !math.IsNaN(area) {
 		return area, nil
 	}
@@ -53,19 +53,19 @@ func calculateArea(s Shape) (float64, error) {
 }
 
 func main() {
-	//Создаем объекты разных типов
-	//(круг, прямоугольник, треугольник)
+	// Создаем объекты разных типов
+	// (круг, прямоугольник, треугольник)
 	circle := Circle{Radius: 5}
 	rectangle := Rectangle{Width: 10, Height: 5}
 	triangle := Triangle{Base: 8, Height: 6}
 
-	//Вызываем функцию calculateArea для каждого
-	//объекта и обрабатываем возможные ошибки
+	// Вызываем функцию calculateArea для каждого
+	// объекта и обрабатываем возможные ошибки
 	area1, err1 := calculateArea(circle)
 	area2, err2 := calculateArea(rectangle)
 	area3, err3 := calculateArea(triangle)
 
-	//Выводим результаты на экран
+	// Выводим результаты
 	if err1 == nil {
 		fmt.Printf("Круг: радиус %.2f\n", circle.Radius)
 		fmt.Printf("Площадь: %.2f\n", area1)
