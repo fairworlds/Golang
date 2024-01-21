@@ -6,52 +6,46 @@ import (
 	"math"
 )
 
-// Создаем интерфейс Shape с единственным.
-// методом для вычисления площади.
-type Shape interface {
+type Shape interface { //Создаем интерфейс Shape с единственным.
+	//методом для вычисления площади.
 	Area() float64
 }
 
-// Структура для представления круга.
-type Circle struct {
+type Circle struct { //Структура для представления круга.
 	Radius float64
 }
 
-// Метод для вычисления площади круга.
-// (реализация интерфейса Shape).
-func (c Circle) Area() float64 {
+func (c Circle) Area() float64 { //Метод для вычисления площади круга.
+	//(реализация интерфейса Shape).
 	return math.Pi * c.Radius * c.Radius
 }
 
-// Структура для представления прямоугольника
-type Rectangle struct {
+type Rectangle struct { //Структура для представления прямоугольника
 	Width  float64
 	Height float64
 }
 
-// Метод для вычисления площади прямоугольника
-// (реализация интерфейса Shape)
-func (r Rectangle) Area() float64 {
+func (r Rectangle) Area() float64 { //Метод для вычисления площади
+	//прямоугольника (реализация интерфейса Shape)
 	return r.Width * r.Height
 }
 
-// Структура для представления треугольника
-type Triangle struct {
+type Triangle struct { //Структура для представления треугольника
 	Base   float64
 	Height float64
 }
 
-// Метод для вычисления площади треугольника
-// (реализация интерфейса Shape)
 func (t Triangle) Area() float64 {
+	//Метод для вычисления площади треугольника
+	//(реализация интерфейса Shape)
 	return 0.5 * t.Base * t.Height
 }
 
-// Функция calculateArea ожидает на входе объект
-// типа Shape и возвращает его площадь.
-// Если переданный объект не реализует интерфейс
-// Shape, функция возвращает ошибку.
 func calculateArea(s Shape) (float64, error) {
+	//Функция calculateArea ожидает на входе объект
+	//типа Shape и возвращает его площадь.
+	//Если переданный объект не реализует интерфейс
+	//Shape, функция возвращает ошибку
 	if area := s.Area(); !math.IsNaN(area) {
 		return area, nil
 	}
