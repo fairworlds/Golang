@@ -6,7 +6,7 @@ import (
 	"math"
 )
 
-type any interface { // Создаем интерфейс Shape с единственным.
+type Shape interface { // Создаем интерфейс Shape с единственным.
 	// методом для вычисления площади.
 	Area() float64
 }
@@ -46,10 +46,10 @@ func calculateArea(s any) (float64, error) {
 	// типа Shape и возвращает его площадь.
 	// Если переданный объект не реализует интерфейс
 	// Shape, функция возвращает ошибку
-	if area := s.Area(); !math.IsNaN(area) {
-		return area, nil
+	if shape, ok := s.(Shape); ok {
+		return shape.Area(), nil
 	}
-	return 0, errors.New("неверный тип объекта")
+	return 0, errors.New("переданный объект не реализует интерфейс Shape")
 }
 
 func main() {
