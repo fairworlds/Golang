@@ -6,7 +6,7 @@ import (
 	"math"
 )
 
-type Shape interface { // Создаем интерфейс Shape с единственным.
+type any interface { // Создаем интерфейс Shape с единственным.
 	// методом для вычисления площади.
 	Area() float64
 }
@@ -41,7 +41,7 @@ func (t Triangle) Area() float64 {
 	return 0.5 * t.Base * t.Height
 }
 
-func calculateArea(s Shape) (float64, error) {
+func calculateArea(s any) (float64, error) {
 	// Функция calculateArea ожидает на входе объект
 	// типа Shape и возвращает его площадь.
 	// Если переданный объект не реализует интерфейс
