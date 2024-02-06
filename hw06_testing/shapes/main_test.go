@@ -29,7 +29,9 @@ func TestCalculateArea(t *testing.T) {
 		}
 
 		// Проверяем ошибку
-		if (err == nil && tc.err != nil) || (err != nil && tc.err == nil) || (err != nil && tc.err != nil && err.Error() != tc.err.Error()) {
+		if (err == nil && tc.err != nil) ||
+			(err != nil && tc.err == nil) ||
+			(err != nil && tc.err != nil && err.Error() != tc.err.Error()) {
 			t.Errorf("Неправильная ошибка. Ожидалось '%v', получено '%v'", tc.err, err)
 		}
 	}
