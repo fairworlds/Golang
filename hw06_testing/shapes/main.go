@@ -52,7 +52,7 @@ func calculateArea(s any) (float64, error) {
 	return 0, errors.New("переданный объект не реализует интерфейс Shape")
 }
 
-func main() {
+func Lol() {
 	// Создаем объекты разных типов
 	// (круг, прямоугольник, треугольник)
 	circle := Circle{Radius: 5}
